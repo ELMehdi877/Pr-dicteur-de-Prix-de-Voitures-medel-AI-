@@ -59,8 +59,8 @@ X_test["owner"] = X_test["owner"].map(owner_mapping).fillna(0)
 categorical_cols = ["fuel", "seller_type", "transmission", "brand"]
 
 # Transformation de X_train et X_test en colonnes 0/1
-X_train = pd.get_dummies(X_train, columns=categorical_cols, drop_first=True)
-X_test = pd.get_dummies(X_test, columns=categorical_cols, drop_first=True)
+X_train = pd.get_dummies(X_train, columns=categorical_cols, drop_first=True, dtype=int)
+X_test = pd.get_dummies(X_test, columns=categorical_cols, drop_first=True, dtype=int)
 
 # Alignement des colonnes (pour que X_train et X_test aient exactement les mêmes colonnes)
 X_train, X_test = X_train.align(X_test, join="left", axis=1, fill_value=0)
