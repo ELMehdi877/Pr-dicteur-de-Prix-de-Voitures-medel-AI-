@@ -99,7 +99,7 @@ print(df_results.to_string(index=False))
 
 
 # ==============================================================================
-# ÉTAPE 1 : DÉFINITION DE LA GRILLE D'HYPERPARAMÈTRES
+# ÉTAPE 5 : DÉFINITION DE LA GRILLE D'HYPERPARAMÈTRES
 # ==============================================================================
 
 # 1. Sélection du meilleur modèle de la phase précédente
@@ -126,7 +126,7 @@ print("Grille d'hyperparamètres définie avec succès !")
 
 
 # ==============================================================================
-# ÉTAPE 2 : EXÉCUTION DE GRIDSEARCHCV AVEC VALIDATION CROISÉE
+# ÉTAPE 6 : EXÉCUTION DE GRIDSEARCHCV AVEC VALIDATION CROISÉE
 # ==============================================================================
 
 # 1. Initialisation de GridSearchCV (cv=5 pour 5-fold cross-validation)
@@ -152,7 +152,6 @@ print(
 )
 
 
-
 # Récupération du meilleur modèle issu de la recherche
 best_rf = grid_search.best_estimator_
 
@@ -172,7 +171,7 @@ print(f"R²   : {round(r2_opt, 4)}")
 
 
 # ==============================================================================
-# ÉTAPE 1 : TABLEAU COMPARATIF FINAL (BASELINE VS OPTIMISÉ)
+# ÉTAPE 7 : TABLEAU COMPARATIF FINAL (BASELINE VS OPTIMISÉ)
 # ==============================================================================
 
 # Calcul du R² final pour le modèle optimisé sur X_test
@@ -197,7 +196,7 @@ print(df_final.to_string(index=False))
 
 
 # ==============================================================================
-# ÉTAPE 2 : ANALYSE DE L'IMPORTANCE DES VARIABLES
+# ÉTAPE 8 : ANALYSE DE L'IMPORTANCE DES VARIABLES
 # ==============================================================================
 
 # 1. Extraction des importances depuis le meilleur modèle
@@ -218,7 +217,7 @@ print(df_importance.head(10).to_string(index=False))
 
 
 # ==============================================================================
-# ÉTAPE 3 : SAUVEGARDE DU MODÈLE OPTIMISÉ (.joblib)
+# ÉTAPE 9 : SAUVEGARDE DU MODÈLE OPTIMISÉ (.joblib)
 # ==============================================================================
 
 # 1. Création du dossier models/ s'il n'existe pas encore
